@@ -36,3 +36,21 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+const container = document.getElementById('team-container');
+
+teamMembers.forEach(member => {
+  const memberCard = document.createElement('div');
+  memberCard.classList.add('team-member');
+
+  memberCard.innerHTML = `
+    <img src="${member.img}" alt="${member.name}">
+    <div class="member-info">
+        <h2>${member.name}</h2>
+        <p>${member.role}</p>
+        <a href="mailto:${member.email}">${member.email}</a>
+    </div>
+  `;
+
+  container.appendChild(memberCard);
+});

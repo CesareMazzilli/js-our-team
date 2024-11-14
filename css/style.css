@@ -22,10 +22,10 @@ body * {
 }
 
 .team-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
+    justify-items: center;
 }
 
 .team-member {
@@ -61,4 +61,22 @@ body * {
     text-decoration: none;
     color: #00bcd4;
     font-size: 0.875rem;
+}
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    justify-items: center; 
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container {
+        grid-template-columns: 1fr; 
+    }
 }
